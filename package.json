@@ -1,0 +1,24 @@
+{
+  "name": "kitter",
+  "version": "1.0.0",
+  "description": "Kitter is a minimalist documentation framework for style kits and design token. Built in React.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/drewlowe/kitter.git"
+  },
+  "keywords": [
+    "documentation",
+    "css",
+    "design"
+  ],
+  "author": "Drew.so",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/drewlowe/kitter/issues"
+  },
+  "homepage": "https://github.com/drewlowe/kitter#readme"
+}
