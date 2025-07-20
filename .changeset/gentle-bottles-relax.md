@@ -1,0 +1,5 @@
+---
+'kitter': patch
+---
+
+Type safety
