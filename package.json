@@ -2,12 +2,16 @@
   "name": "kitter",
   "version": "0.0.1",
   "description": "Kitter is a minimalist documentation framework for style kits and design token. Built in React.",
+  "author": "Mustard Software LLC",
+  "license": "MIT",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "build": "tsc",
-    "ci": "npm run build && npm run check-format",
+    "ci": "npm run build && npm run check-format && npm run test",
     "format": "prettier --write .",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "vitest run",
+    "dev": "vitest",
     "check-format": "prettier --check ."
   },
   "repository": {
@@ -19,17 +23,16 @@
     "css",
     "design"
   ],
-  "author": "Mustard Software LLC",
-  "license": "MIT",
+  "homepage": "https://github.com/drewlowe/kitter#readme",
   "bugs": {
     "url": "https://github.com/drewlowe/kitter/issues"
   },
-  "homepage": "https://github.com/drewlowe/kitter#readme",
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^8.36.0",
     "@typescript-eslint/parser": "^8.36.0",
     "eslint": "^9.31.0",
     "prettier": "^3.6.2",
-    "typescript": "^5.8.3"
+    "typescript": "^5.8.3",
+    "vitest": "^3.2.4"
   }
 }
