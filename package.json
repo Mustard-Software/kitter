@@ -12,7 +12,9 @@
     "format": "prettier --write .",
     "test": "vitest run",
     "dev": "vitest",
-    "check-format": "prettier --check ."
+    "check-format": "prettier --check .",
+    "local-release": "changeset version && changeset publish",
+    "prepublishOnly": "npm run ci"
   },
   "repository": {
     "type": "git",
@@ -28,6 +30,7 @@
     "url": "https://github.com/drewlowe/kitter/issues"
   },
   "devDependencies": {
+    "@changesets/cli": "^2.29.5",
     "@typescript-eslint/eslint-plugin": "^8.36.0",
     "@typescript-eslint/parser": "^8.36.0",
     "eslint": "^9.31.0",
