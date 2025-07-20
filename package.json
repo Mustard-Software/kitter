@@ -16,6 +16,7 @@
     "local-release": "changeset version && changeset publish",
     "prepublishOnly": "npm run ci"
   },
+  "types": "./dist/index.d.ts",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/drewlowe/kitter.git"

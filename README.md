@@ -9,7 +9,7 @@ A minimal and expressive documentation framework for modern component libraries 
 
 ## 🚧 Status
 
-The current version (`v0.0.2`) is an empty preview to reserve the kitter keyword on npm.
+The current version is an empty preview to reserve the kitter keyword on npm.
 
 ---
 
