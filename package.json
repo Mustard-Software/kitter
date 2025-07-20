@@ -5,9 +5,10 @@
   "main": "index.js",
   "scripts": {
     "build": "tsc",
-    "ci": "npm run build",
+    "ci": "npm run build && npm run check-format",
     "format": "prettier --write .",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "check-format": "prettier --check ."
   },
   "repository": {
     "type": "git",
