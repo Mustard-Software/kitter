@@ -1,11 +1,13 @@
 {
-  "name": "kitter",
+  "name": "kitter.js",
   "version": "0.0.7",
   "description": "Kitter is a minimalist documentation framework for style kits and design token. Built in React.",
   "author": "Mustard Software LLC",
   "license": "MIT",
-  "main": "./dist/index.js",
+  "main": "./dist/index.cjs.js",
+  "module": "./dist/index.es.js",
   "types": "./dist/index.d.ts",
+  "style": "dist/kitter.css",
   "files": [
     "dist",
     "README.md",
@@ -25,16 +27,16 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/drewlowe/kitter.git"
+    "url": "git+https://github.com/Mustard-Software/kitter.git"
   },
   "keywords": [
     "documentation",
     "css",
     "design"
   ],
-  "homepage": "https://github.com/drewlowe/kitter#readme",
+  "homepage": "https://github.com/Mustard-Software/kitter#readme",
   "bugs": {
-    "url": "https://github.com/drewlowe/kitter/issues"
+    "url": "https://github.com/Mustard-Software/kitter/issues"
   },
   "devDependencies": {
     "@changesets/cli": "^2.29.5",
@@ -47,10 +49,13 @@
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "typescript": "^5.8.3",
-    "vite": "^7.0.5",
     "vitest": "^3.2.4"
   },
   "dependencies": {
-    "@vitejs/plugin-react": "^4.7.0"
+    "@tailwindcss/vite": "^4.1.11",
+    "@vitejs/plugin-react": "^4.7.0",
+    "lucide-react": "^0.525.0",
+    "tailwindcss": "^4.1.11",
+    "vite": "^7.0.5"
   }
 }

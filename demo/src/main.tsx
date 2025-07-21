@@ -1,9 +1,10 @@
 import { StrictMode } from 'react';
 import ReactDOM from 'react-dom/client';
-import { add } from '../../dist';
+import { DocumentationPage } from './pages/Documentation';
+import './demo.css';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <h1 style={{ color: 'black' }}>2 + 3 = {add(2, 3)}</h1>
+    <DocumentationPage />
   </StrictMode>,
 );

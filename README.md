@@ -1,4 +1,4 @@
-# 🧶 kitter
+# 🧶 kitter.js
 
 A minimal and expressive documentation framework for modern component libraries and design systems.
 

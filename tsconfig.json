@@ -12,6 +12,7 @@
     "moduleResolution": "node",
     "jsx": "react-jsx",
     "lib": ["DOM", "ESNext"],
+    "emitDeclarationOnly": true,
 
     /* Strictness */
     "strict": true,
