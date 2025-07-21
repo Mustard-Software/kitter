@@ -63,6 +63,7 @@ export const ScrollToTop = ({
   );
 };
 
+/** Interface for the kitter.js Page component. */
 export interface PageProps {
   children: ReactNode;
   className?: string;
@@ -70,9 +71,12 @@ export interface PageProps {
   id?: string;
 }
 
+/** Create a Page in your kitter.js document.
+ * Make sure to set id for use with the Contents component
+ */
 export const Page = ({
   children,
-  className = '',
+  className,
   center = false,
   id,
 }: PageProps) => {
@@ -86,13 +90,28 @@ export const Page = ({
   );
 };
 
-export interface IContents {
+export type DocumentContentsItem = {
   label: string;
   id: string;
+};
+
+export interface DocumentContentsProps {
+  contents: DocumentContentsItem[];
+  className?: string;
 }
 
-export const Contents = ({ contents }: { contents: IContents[] }) => (
-  <div className="flex flex-row gap-8 items-center w-full font-mono font-light underline decoration-dotted justify-center mt-8">
+/** Creates a table of contents for the current kitter.js document */
+export const DocumentContents = ({
+  contents,
+  className,
+}: DocumentContentsProps) => (
+  <div
+    className={`
+        grid grid-cols-4 gap-8 items-center w-full font-mono 
+        underline decoration-dotted justify-center mt-8
+        ${className}
+      `}
+  >
     {contents.map(({ label, id }) => (
       <a key={id} href={`#${id}`}>
         {label}

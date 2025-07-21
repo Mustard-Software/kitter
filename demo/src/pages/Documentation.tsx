@@ -1,11 +1,27 @@
-import { Documentation, Page, ScrollToTop } from '../../../dist';
+import {
+  Documentation,
+  Page,
+  ScrollToTop,
+  DocumentContents,
+} from '../../../dist';
 
 export const DocumentationPage = () => (
-  <Documentation>
+  <Documentation className="bg-gray-200">
     <ScrollToTop />
     <Page center={true} id="toc">
-      <h1>Test</h1>
-      <div className="w-64 h-64 bg-pink-500" />
+      <h1 className="text-2xl text-center">Documentation Page</h1>
+      <DocumentContents
+        contents={[
+          { id: 'toc', label: 'Documentation Page' },
+          { id: 'toc', label: 'Documentation Page' },
+          { id: 'toc', label: 'Documentation Page' },
+          { id: 'toc', label: 'Documentation Page' },
+          { id: 'toc', label: 'Documentation Page' },
+          { id: 'toc', label: 'Documentation Page' },
+          { id: 'toc', label: 'Documentation Page' },
+          { id: 'toc', label: 'Documentation Page' },
+        ]}
+      />
     </Page>
   </Documentation>
 );
