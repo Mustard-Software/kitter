@@ -1,5 +1,11 @@
 # kitter
 
+## 0.0.11
+
+### Patch Changes
+
+- a3834c2: Fix package.json module declaration
+
 ## 0.0.10
 
 ### Patch Changes
