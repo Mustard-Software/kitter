@@ -1,5 +1,5 @@
 {
-  "name": "kitter.js",
+  "name": "kitter",
   "version": "0.0.8",
   "description": "Kitter is a minimalist documentation framework for style kits and design token. Built in React.",
   "author": "Mustard Software LLC",
