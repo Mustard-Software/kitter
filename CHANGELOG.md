@@ -1,5 +1,11 @@
 # kitter
 
+## 0.0.9
+
+### Patch Changes
+
+- c008791: Fix build script
+
 ## 0.0.8
 
 ### Patch Changes
