@@ -10,22 +10,19 @@
   "files": [
     "dist",
     "README.md",
-    "LICENSE",
-    "scripts",
-    "templates"
+    "LICENSE"
   ],
   "type": "module",
   "scripts": {
     "build:css": "tailwindcss -i ./src/tailwind.css -o ./dist/tailwind.css --minify",
     "build": "rm -rf dist && npm run build:css && tsc",
-    "postinstall": "node scripts/postinstall.js",
+    "postinstall": "node dist/scripts/postinstall.js",
     "ci": "npm run build && npm run check-format",
     "format": "prettier --write .",
     "test": "vitest run",
     "dev": "vitest",
     "check-format": "prettier --check .",
     "local-release": "changeset version && changeset publish",
-    "prepublishOnly": "npm run ci",
     "preview": "vite --config demo/vite.config.ts"
   },
   "repository": {

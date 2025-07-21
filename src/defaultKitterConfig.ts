@@ -5,7 +5,7 @@ import type { KitterConfig } from './kitter.config';
 export const kitter: KitterConfig = {
   styles: {
     documentation: {
-      maxWidth: '1000px',
+      maxWidth: '250px',
       className: '',
     },
     scrollToTop: {

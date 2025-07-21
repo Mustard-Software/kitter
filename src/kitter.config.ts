@@ -37,3 +37,7 @@ export const setKitterConfig = (newConfig: KitterConfig) => {
 };
 
 export const getKitterConfig = (): KitterConfig => config;
+
+export const initializeKitter = (newConfig: KitterConfig) => {
+  setKitterConfig(newConfig);
+};
