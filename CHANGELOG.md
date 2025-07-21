@@ -1,5 +1,11 @@
 # kitter
 
+## 0.0.6
+
+### Patch Changes
+
+- 35344fc: Attempting to fix types
+
 ## 0.0.5
 
 ### Patch Changes
