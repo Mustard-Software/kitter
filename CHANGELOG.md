@@ -1,5 +1,11 @@
 # kitter
 
+## 0.0.10
+
+### Patch Changes
+
+- 26ac90e: Tailwind bundles properly
+
 ## 0.0.9
 
 ### Patch Changes
