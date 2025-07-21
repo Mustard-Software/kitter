@@ -1,5 +1,11 @@
 # kitter
 
+## 0.0.8
+
+### Patch Changes
+
+- d3ffcbd: Preview demo app
+
 ## 0.0.7
 
 ### Patch Changes
