@@ -10,6 +10,8 @@
     "isolatedModules": true,
     "verbatimModuleSyntax": true,
     "moduleResolution": "node",
+    "jsx": "react-jsx",
+    "lib": ["DOM", "ESNext"],
 
     /* Strictness */
     "strict": true,
