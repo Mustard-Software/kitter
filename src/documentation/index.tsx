@@ -1,18 +1,67 @@
 import type { ReactNode } from 'react';
 import { ChevronUp } from 'lucide-react';
 
-export const Documentation = ({ children }: { children: ReactNode }) => (
-  <div className="flex min-h-screen justify-center">
-    <a
-      href="#toc"
-      className="fixed top-4 right-4 flex flex-row items-center gap-4 fill-fg-light text-fg-light"
-    >
-      <span className="font-mono text-red-500">table of contents</span>
-      <ChevronUp className="w-4 h-4" />
-    </a>
-    <div className="max-w-[1000px] w-full">{children}</div>
-  </div>
+/** Interface for the kitter.js Documentation component. */
+export interface DocumentationProps {
+  children: ReactNode;
+  maxWidth?: string | number;
+  className?: string;
+}
+
+/** Wrap your entire kitter.js document with this component. */
+export const Documentation = ({
+  children,
+  maxWidth = '1000px',
+  className,
+}: DocumentationProps) => (
+  <>
+    <a id="scroll-to-top-anchor" />
+    <div className={`flex min-h-screen justify-center ${className}`}>
+      <div className="w-full" style={{ maxWidth }}>
+        {children}
+      </div>
+    </div>
+  </>
 );
+
+/** Interface for the kitter.js ScrollToTop component. */
+export interface ScrollToTopProps {
+  textClassName?: string;
+  iconClassName?: string;
+  iconColor?: string;
+  iconOverride?: ReactNode;
+  textOverride?: string;
+}
+
+/** Creates a return to top link in the top right corner of a kitter.js document */
+export const ScrollToTop = ({
+  textClassName,
+  iconClassName,
+  iconColor,
+  iconOverride,
+  textOverride,
+}: ScrollToTopProps) => {
+  return (
+    <a
+      href="#scroll-to-top-anchor"
+      className="fixed top-4 right-4 flex flex-row items-center gap-4"
+      role="button"
+      aria-label="Scroll to top"
+    >
+      <span className={`font-mono ${textClassName}`}>
+        {textOverride ? textOverride : 'table of contents'}
+      </span>
+      {iconOverride ? (
+        iconOverride
+      ) : (
+        <ChevronUp
+          className={`w-4 h-4 ${iconClassName}`}
+          color={iconColor ? iconColor : 'black'}
+        />
+      )}
+    </a>
+  );
+};
 
 export interface PageProps {
   children: ReactNode;
