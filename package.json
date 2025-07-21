@@ -10,12 +10,15 @@
   "files": [
     "dist",
     "README.md",
-    "LICENSE"
+    "LICENSE",
+    "scripts",
+    "templates"
   ],
   "type": "module",
   "scripts": {
     "build:css": "tailwindcss -i ./src/tailwind.css -o ./dist/tailwind.css --minify",
     "build": "rm -rf dist && npm run build:css && tsc",
+    "postinstall": "node scripts/postinstall.js",
     "ci": "npm run build && npm run check-format",
     "format": "prettier --write .",
     "test": "vitest run",

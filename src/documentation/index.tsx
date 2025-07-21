@@ -1,5 +1,6 @@
 import type { ReactNode } from 'react';
 import { ChevronUp } from 'lucide-react';
+import { getKitterConfig } from '../kitter.config';
 
 /**
  * Props for the `Documentation` component.
@@ -21,18 +22,26 @@ export interface DocumentationProps {
  */
 export const Documentation = ({
   children,
-  maxWidth = '1000px',
+  maxWidth,
   className,
-}: DocumentationProps) => (
-  <>
-    <a id="scroll-to-top-anchor" />
-    <div className={`flex min-h-screen justify-center ${className}`}>
-      <div className="w-full" style={{ maxWidth }}>
-        {children}
+}: DocumentationProps) => {
+  const config = getKitterConfig()?.styles?.documentation ?? {};
+
+  const resolvedMaxWidth = maxWidth ?? config.maxWidth ?? '1000px';
+  const resolvedClassName =
+    `${config.className ?? ''} ${className ?? ''}`.trim();
+
+  return (
+    <>
+      <a id="scroll-to-top-anchor" />
+      <div className={`flex min-h-screen justify-center ${resolvedClassName}`}>
+        <div className="w-full" style={{ maxWidth: resolvedMaxWidth }}>
+          {children}
+        </div>
       </div>
-    </div>
-  </>
-);
+    </>
+  );
+};
 
 /** Interface for the kitter.js ScrollToTop component. */
 export interface ScrollToTopProps {
