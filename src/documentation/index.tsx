@@ -1,14 +1,24 @@
 import type { ReactNode } from 'react';
 import { ChevronUp } from 'lucide-react';
 
-/** Interface for the kitter.js Documentation component. */
+/**
+ * Props for the `Documentation` component.
+ * Controls the layout container and max width.
+ */
 export interface DocumentationProps {
+  /** Content to display inside the documentation layout */
   children: ReactNode;
+  /** Maximum width of the inner content container (e.g., '1000px' or '80ch') */
   maxWidth?: string | number;
+  /** Optional additional class names for the outer container */
   className?: string;
 }
 
-/** Wrap your entire kitter.js document with this component. */
+/**
+ * Wraps your entire kitter.js document in a centered container.
+ *
+ * @returns A layout wrapper with customizable max width
+ */
 export const Documentation = ({
   children,
   maxWidth = '1000px',
@@ -26,14 +36,24 @@ export const Documentation = ({
 
 /** Interface for the kitter.js ScrollToTop component. */
 export interface ScrollToTopProps {
+  /** Tailwind classes for the label text */
   textClassName?: string;
+  /** Tailwind classes for the icon element */
   iconClassName?: string;
+  /** Color override for the default icon */
   iconColor?: string;
+  /** Optional custom icon node to replace the default icon */
   iconOverride?: ReactNode;
+  /** Optional override for the link text (default: "table of contents") */
   textOverride?: string;
 }
 
-/** Creates a return to top link in the top right corner of a kitter.js document */
+/**
+ * Creates a fixed-position "scroll to top" link in the top-right corner.
+ * Intended for use within a kitter.js document.
+ *
+ * @returns JSX.Element
+ */
 export const ScrollToTop = ({
   textClassName,
   iconClassName,
@@ -65,14 +85,21 @@ export const ScrollToTop = ({
 
 /** Interface for the kitter.js Page component. */
 export interface PageProps {
+  /** Page content */
   children: ReactNode;
+  /** Optional additional class names */
   className?: string;
+  /** Whether to center the content vertically */
   center?: boolean;
+  /** Unique ID used for anchor linking */
   id?: string;
 }
 
-/** Create a Page in your kitter.js document.
- * Make sure to set id for use with the Contents component
+/**
+ * Creates a new page section within a kitter.js document.
+ * Useful for semantic layout and anchor-based navigation.
+ *
+ * @returns JSX.Element
  */
 export const Page = ({
   children,
@@ -90,19 +117,27 @@ export const Page = ({
   );
 };
 
-/** Object type for a kitter.js DocumentContents item */
+/** Represents a single item in the document's table of contents. */
 export type DocumentContentsItem = {
+  /** Display label for the TOC item */
   label: string;
+  /** Corresponding anchor ID on the page */
   id: string;
 };
 
 /** Interface for the kitter.js DocumentContents component. */
 export interface DocumentContentsProps {
+  /** List of TOC items to render */
   contents: DocumentContentsItem[];
+  /** Optional additional class names */
   className?: string;
 }
 
-/** Creates a table of contents for the current kitter.js document */
+/**
+ * Renders a table of contents with anchor links to page sections.
+ *
+ * @returns JSX.Element
+ */
 export const DocumentContents = ({
   contents,
   className,
@@ -124,11 +159,17 @@ export const DocumentContents = ({
 
 /** Interface for the kitter.js PageTitle component. */
 export interface PageTitleProps {
+  /** Text to render as the page title */
   title: string;
+  /** Optional additional class names */
   className?: string;
 }
 
-/** Adds a title to the current kitter.js page */
+/**
+ * Renders a stylized title for a page section.
+ *
+ * @returns JSX.Element
+ */
 export const PageTitle = ({ title, className }: PageTitleProps) => (
   <h2
     className={`text-center text-4xl font-light mb-12 pt-20 text-fg font-mono ${className}`}
@@ -139,11 +180,17 @@ export const PageTitle = ({ title, className }: PageTitleProps) => (
 
 /** Interface for the kitter.js PageDescription component. */
 export interface PageDescriptionProps {
+  /** Description content, typically paragraph text */
   children: ReactNode;
+  /** Optional additional class names */
   className?: string;
 }
 
-/** Adds a description to the current kitter.js page */
+/**
+ * Renders a description block below a page title.
+ *
+ * @returns JSX.Element
+ */
 export const PageDescription = ({
   children,
   className,
@@ -157,18 +204,31 @@ export const PageDescription = ({
 
 /** Interface for the kitter.js PageSection component. */
 export interface PageSectionProps {
+  /** Section content */
   children: ReactNode;
+  /** Section heading */
   title: string;
+  /** Optional additional class names for the title */
   titleClassName?: string;
+  /** ID which can be used to link directly to this section */
+  id?: string;
 }
 
-/** Creates a section on the current kitter.js page. */
+/**
+ * Creates a visually separated section with a title and content.
+ *
+ * @returns JSX.Element
+ */
 export const PageSection = ({
   children,
   title,
   titleClassName,
+  id,
 }: PageSectionProps) => (
-  <div className="flex w-full flex-col items-center justify-center gap-4">
+  <div
+    className="flex w-full flex-col items-center justify-center gap-4"
+    id={id}
+  >
     <h2
       className={`text-2xl font-light text-left w-full font-mono text-fg-light ${titleClassName}`}
     >
