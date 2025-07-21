@@ -1,5 +1,11 @@
 # kitter
 
+## 0.0.5
+
+### Patch Changes
+
+- 1380d45: Type safety
+
 ## 0.0.2
 
 ### Patch Changes
