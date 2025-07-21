@@ -90,11 +90,13 @@ export const Page = ({
   );
 };
 
+/** Object type for a kitter.js DocumentContents item */
 export type DocumentContentsItem = {
   label: string;
   id: string;
 };
 
+/** Interface for the kitter.js DocumentContents component. */
 export interface DocumentContentsProps {
   contents: DocumentContentsItem[];
   className?: string;
@@ -120,32 +122,58 @@ export const DocumentContents = ({
   </div>
 );
 
-export const PageTitle = ({ title }: { title: string }) => (
-  <h2 className="text-center text-4xl font-light mb-12 pt-20 text-fg font-mono">
+/** Interface for the kitter.js PageTitle component. */
+export interface PageTitleProps {
+  title: string;
+  className?: string;
+}
+
+/** Adds a title to the current kitter.js page */
+export const PageTitle = ({ title, className }: PageTitleProps) => (
+  <h2
+    className={`text-center text-4xl font-light mb-12 pt-20 text-fg font-mono ${className}`}
+  >
     {title}
   </h2>
 );
 
-export const PageDescription = ({ children }: { children: ReactNode }) => (
-  <div className="text-left text-md font-light mb-20 text-fg-light flex flex-col gap-8 font-mono">
+/** Interface for the kitter.js PageDescription component. */
+export interface PageDescriptionProps {
+  children: ReactNode;
+  className?: string;
+}
+
+/** Adds a description to the current kitter.js page */
+export const PageDescription = ({
+  children,
+  className,
+}: PageDescriptionProps) => (
+  <div
+    className={`text-left text-md font-light mb-20 text-fg-light flex flex-col gap-8 font-mono ${className}`}
+  >
     {children}
   </div>
 );
 
+/** Interface for the kitter.js PageSection component. */
 export interface PageSectionProps {
   children: ReactNode;
   title: string;
+  titleClassName?: string;
 }
 
-export const PageSection = ({ children, title }: PageSectionProps) => (
+/** Creates a section on the current kitter.js page. */
+export const PageSection = ({
+  children,
+  title,
+  titleClassName,
+}: PageSectionProps) => (
   <div className="flex w-full flex-col items-center justify-center gap-4">
-    <h2 className="text-2xl font-light text-left w-full font-mono text-fg-light">
+    <h2
+      className={`text-2xl font-light text-left w-full font-mono text-fg-light ${titleClassName}`}
+    >
       {title}
     </h2>
     {children}
   </div>
-);
-
-export const InlineCode = ({ children }: { children: ReactNode }) => (
-  <code className="type-code-inline">{children}</code>
 );
