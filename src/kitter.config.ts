@@ -28,6 +28,15 @@ export interface KitterConfig {
         className?: string;
       };
     };
+    color?: {
+      colorSwatch?: {
+        size?: string;
+        radius?: string;
+        shadow?: string;
+        colorCodeStyle?: string;
+        labelStyle?: string;
+      };
+    };
   };
 }
 

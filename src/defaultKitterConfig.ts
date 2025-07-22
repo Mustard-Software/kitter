@@ -33,5 +33,14 @@ export const kitter: KitterConfig = {
           'font-mono underline decoration-dotted grid grid-cols-4 gap-8 mt-8',
       },
     },
+    color: {
+      colorSwatch: {
+        size: 'w-8 h-8',
+        radius: 'rounded-sm',
+        shadow: 'shadow-sm',
+        labelStyle: 'font-mono text-md',
+        colorCodeStyle: 'text-xs font-mono text-gray-500',
+      },
+    },
   },
 };
