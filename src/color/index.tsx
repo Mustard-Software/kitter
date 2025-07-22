@@ -55,9 +55,12 @@ export interface ColorSwatchProps {
 }
 
 /**
- * Creates a color swatch for your design tokens. Must be a client component.
+ * Creates a color swatch display using a Tailwind CSS token.
+ * Dynamically resolves the actual computed color in the browser and displays optional formats (hex, OKLCH, HSL).
  *
- * @returns A color swatch React node.
+ * This must be used in a client component since it relies on getComputedStyle in useEffect.
+ *
+ * @returns A React node showing the color swatch with optional string representations.
  */
 export const ColorSwatch = ({
   color,
