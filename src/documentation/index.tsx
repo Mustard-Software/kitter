@@ -25,7 +25,7 @@ export const Documentation = ({
   maxWidth,
   className,
 }: DocumentationProps) => {
-  const config = getKitterConfig()?.styles?.documentation ?? {};
+  const config = getKitterConfig()?.styles?.documentation?.documentation ?? {};
 
   const resolvedMaxWidth = maxWidth ?? config.maxWidth ?? '1000px';
   const resolvedClassName =
@@ -70,6 +70,16 @@ export const ScrollToTop = ({
   iconOverride,
   textOverride,
 }: ScrollToTopProps) => {
+  const config = getKitterConfig()?.styles?.documentation?.scrollToTop ?? {};
+
+  const resolvedTextClassName =
+    `${config.textClassName ?? ''} ${textClassName ?? ''}`.trim();
+  const resolvedTextOverride =
+    textOverride ?? config.textOverride ?? 'table of contents';
+  const resolvedIconClassName =
+    `w-4 h-4 ${config.iconClassName ?? ''} ${iconClassName ?? ''}`.trim();
+  const resolvedIconColor = iconColor ?? config.iconColor ?? 'black';
+
   return (
     <a
       href="#scroll-to-top-anchor"
@@ -77,15 +87,13 @@ export const ScrollToTop = ({
       role="button"
       aria-label="Scroll to top"
     >
-      <span className={`font-mono ${textClassName}`}>
-        {textOverride ? textOverride : 'table of contents'}
-      </span>
+      <span className={resolvedTextClassName}>{resolvedTextOverride}</span>
       {iconOverride ? (
         iconOverride
       ) : (
         <ChevronUp
-          className={`w-4 h-4 ${iconClassName}`}
-          color={iconColor ? iconColor : 'black'}
+          className={resolvedIconClassName}
+          color={resolvedIconColor}
         />
       )}
     </a>
@@ -116,11 +124,15 @@ export const Page = ({
   center = false,
   id,
 }: PageProps) => {
-  const container = `min-h-screen w-full ${className}`;
+  const config = getKitterConfig()?.styles?.documentation?.page ?? {};
+
   const layout = center ? 'flex flex-col justify-center' : '';
 
+  const resolvedClassName =
+    `min-h-screen w-full ${layout} ${config.className ?? ''} ${className ?? ''}`.trim();
+
   return (
-    <div className={`${container} ${layout}`} id={id}>
+    <div className={resolvedClassName} id={id}>
       {children}
     </div>
   );
@@ -150,21 +162,22 @@ export interface DocumentContentsProps {
 export const DocumentContents = ({
   contents,
   className,
-}: DocumentContentsProps) => (
-  <div
-    className={`
-        grid grid-cols-4 gap-8 items-center w-full font-mono 
-        underline decoration-dotted justify-center mt-8
-        ${className}
-      `}
-  >
-    {contents.map(({ label, id }) => (
-      <a key={id} href={`#${id}`}>
-        {label}
-      </a>
-    ))}
-  </div>
-);
+}: DocumentContentsProps) => {
+  const config =
+    getKitterConfig()?.styles?.documentation?.documentContents ?? {};
+
+  const resolvedClassName = `items-center w-full justify-center ${config.className} ${className}`;
+
+  return (
+    <div className={resolvedClassName}>
+      {contents.map(({ label, id }) => (
+        <a key={id} href={`#${id}`}>
+          {label}
+        </a>
+      ))}
+    </div>
+  );
+};
 
 /** Interface for the kitter.js PageTitle component. */
 export interface PageTitleProps {
@@ -179,13 +192,14 @@ export interface PageTitleProps {
  *
  * @returns JSX.Element
  */
-export const PageTitle = ({ title, className }: PageTitleProps) => (
-  <h2
-    className={`text-center text-4xl font-light mb-12 pt-20 text-fg font-mono ${className}`}
-  >
-    {title}
-  </h2>
-);
+export const PageTitle = ({ title, className }: PageTitleProps) => {
+  const config = getKitterConfig()?.styles?.documentation?.pageTitle ?? {};
+
+  const resolvedClassName =
+    `text-center ${config.className ?? ''} ${className ?? ''}`.trim();
+
+  return <h2 className={resolvedClassName}>{title}</h2>;
+};
 
 /** Interface for the kitter.js PageDescription component. */
 export interface PageDescriptionProps {
@@ -203,13 +217,15 @@ export interface PageDescriptionProps {
 export const PageDescription = ({
   children,
   className,
-}: PageDescriptionProps) => (
-  <div
-    className={`text-left text-md font-light mb-20 text-fg-light flex flex-col gap-8 font-mono ${className}`}
-  >
-    {children}
-  </div>
-);
+}: PageDescriptionProps) => {
+  const config =
+    getKitterConfig()?.styles?.documentation?.pageDescription ?? {};
+
+  const resolvedClassName =
+    `${config.className ?? ''} ${className ?? ''}`.trim();
+
+  return <div className={resolvedClassName}>{children}</div>;
+};
 
 /** Interface for the kitter.js PageSection component. */
 export interface PageSectionProps {
@@ -233,16 +249,19 @@ export const PageSection = ({
   title,
   titleClassName,
   id,
-}: PageSectionProps) => (
-  <div
-    className="flex w-full flex-col items-center justify-center gap-4"
-    id={id}
-  >
-    <h2
-      className={`text-2xl font-light text-left w-full font-mono text-fg-light ${titleClassName}`}
+}: PageSectionProps) => {
+  const config = getKitterConfig()?.styles?.documentation?.pageSection ?? {};
+
+  const resolvedTitleClassName =
+    `${config.titleClassName ?? ''} ${titleClassName ?? ''}`.trim();
+
+  return (
+    <div
+      className="flex w-full flex-col items-center justify-center gap-4"
+      id={id}
     >
-      {title}
-    </h2>
-    {children}
-  </div>
-);
+      <h2 className={resolvedTitleClassName}>{title}</h2>
+      {children}
+    </div>
+  );
+};

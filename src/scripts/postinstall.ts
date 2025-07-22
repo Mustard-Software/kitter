@@ -13,14 +13,13 @@ export const kitter: KitterConfig = {
       className: '',
     },
     scrollToTop: {
-      textClassName: '',
+      textClassName: 'font-mono',
       iconClassName: '',
       iconColor: 'black',
       textOverride: 'table of contents',
     },
     page: {
       className: '',
-      center: false,
     },
     pageTitle: {
       className: '',
