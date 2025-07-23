@@ -136,3 +136,40 @@ export type DocumentContentsItem = {
 ---
 
 ## Color
+
+---
+
+### `<ColorGroup />`
+
+Creates a kitter.js page section optimized for creating swatch palettes.
+
+#### ColorGroup Props
+
+- `title` - The title for this group of color swatches
+- `children` - Contains the swatches for this group
+
+---
+
+### `<ColorSwatch />`
+
+Creates a color swatch display using a Tailwind CSS token.
+Dynamically resolves the actual computed color in the browser and displays optional formats (hex, OKLCH, HSL).
+
+This must be used in a client component since it relies on getComputedStyle in useEffect.
+
+#### ColorSwatch Props
+
+- `color` - Tailwind CSS background class for the swatch color (e.g., "bg-blue-500"). This class will be applied to the swatch element.
+- `label` - The label text displayed next to the color swatch (e.g., "Primary Blue").
+- _Optional:_ `displayHex` - Whether to display the HEX color value (e.g., "#1d4ed8").
+  Pass `true` to show it, `false` or omit to hide.
+- _Optional:_ `displayOklch` - Whether to display the OKLCH color value (e.g., "oklch(62% 0.16 245deg)").
+  Pass `true` to show it, `false` or omit to hide.
+- _Optional:_ `displayHsl` - Whether to display the HSL color value (e.g., "hsl(220 60% 50%)").
+  Pass `true` to show it, `false` or omit to hide.
+
+---
+
+## Typography
+
+---
