@@ -46,7 +46,7 @@ export interface TypographySampleProps {
  */
 export const TypographySample = ({
   className,
-  sampleText = 'Typography.',
+  sampleText = 'Typography',
 }: TypographySampleProps) => {
   const ref = useRef<HTMLDivElement>(null);
   const [computedStyles, setComputedStyles] = useState('');
