@@ -42,5 +42,11 @@ export const kitter: KitterConfig = {
         colorCodeStyle: 'text-xs font-mono text-gray-500',
       },
     },
+    typography: {
+      typographyGroup:
+        'w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 pb-20 gap-12',
+      sampleTitle: 'flex flex-col text-xs text-gray-700 font-mono',
+      sampleComputedStyles: 'flex flex-col text-xs text-gray-400 font-mono',
+    },
   },
 };

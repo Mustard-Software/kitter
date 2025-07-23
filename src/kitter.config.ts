@@ -37,6 +37,11 @@ export interface KitterConfig {
         labelStyle?: string;
       };
     };
+    typography?: {
+      typographyGroup?: string;
+      sampleTitle?: string;
+      sampleComputedStyles?: string;
+    };
   };
 }
 

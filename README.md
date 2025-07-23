@@ -4,7 +4,19 @@
 
 **kitter.js** is a minimal and expressive documentation framework for modern component libraries and design systems with React, Tailwind, and TypeScript.
 
-Our philosophy with kitter is to provide a zen and fun way to turn your design tokens and components into design documentation that inspires. The current implementation of kitter includes color swatches and typography systems. However, our team is continuing to develop more design features into kitter as we seek to push the limits of what is possible with design token documentation.
+kitter.js was designed to make documenting design systems clean, expressive, and fun — without boilerplate. Whether you're building a design system from scratch or showcasing tokens in production, kitter gets out of your way. The current implementation of kitter includes color swatches and typography systems. However, our team is continuing to develop more design features into kitter as we seek to push the limits of what is possible with design token documentation.
+
+🚧 Currently in early development — we support:
+
+- 📘 Page layout primitives (titles, descriptions, sections)
+- 🎨 Color swatches (with computed formats: hex, OKLCH, HSL)
+- 🅰️ Typography samples (with computed font styles)
+
+Coming soon:
+
+- Component previews
+- Spacing scale
+- Grid system
 
 ## Installation
 
@@ -37,6 +49,36 @@ export default function RootLayout({ children }) {
 ```
 
 Once your `<KitterProvider />` has loaded the configuration, you should be able to see your configured styles in action.
+
+## Quick Start
+
+---
+
+```tsx
+import {
+  Documentation,
+  Page,
+  PageTitle,
+  PageDescription,
+  PageSection,
+  ColorGroup,
+  ColorSwatch,
+} from 'kitter';
+
+export default function DocsPage() {
+  return (
+    <Documentation>
+      <Page>
+        <PageTitle title="My Design System" />
+        <PageDescription>Welcome to my design tokens.</PageDescription>
+        <ColorGroup title="Brand Colors">
+          <ColorSwatch color="bg-blue-500" label="--primary" displayHex />
+        </ColorGroup>
+      </Page>
+    </Documentation>
+  );
+}
+```
 
 ## Pages
 
@@ -171,5 +213,25 @@ This must be used in a client component since it relies on getComputedStyle in u
 ---
 
 ## Typography
+
+---
+
+### `<TypographyGroup />`
+
+A layout wrapper used to display a group of typography samples,
+organized under a section title.
+
+- `title` - Title for the typography section
+- `children` - Children elements to be rendered within the group
+
+---
+
+### `<TypographySample />`
+
+A component that renders a text sample with a given class name,
+and displays its computed styles (font size, line height, weight, and family).
+
+- `className` - Tailwind or custom class name applied to the sample text
+- _Optional:_ `sampleText` - Sample text to render; defaults to "Typography."
 
 ---
