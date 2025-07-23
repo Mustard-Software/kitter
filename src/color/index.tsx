@@ -16,7 +16,7 @@ export const ColorGroup = ({
   children: ReactNode;
 }) => (
   <PageSection title={title}>
-    <div className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+    <div className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 px-8">
       {children}
     </div>
   </PageSection>
