@@ -1,5 +1,11 @@
 # kitter
 
+## 0.1.1
+
+### Patch Changes
+
+- 08f191b: Increment release for npm
+
 ## 0.1.0
 
 ### Minor Changes
