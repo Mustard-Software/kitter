@@ -1,5 +1,11 @@
 # kitter
 
+## 0.1.0
+
+### Minor Changes
+
+- 6cc9ff1: Stable colors and typography
+
 ## 0.0.11
 
 ### Patch Changes
