@@ -1,6 +1,7 @@
 import type { ReactNode } from 'react';
 import { ChevronUp } from 'lucide-react';
-import { getKitterConfig } from '../kitter.config';
+
+import { useKitterConfig } from '../KitterProvider';
 
 /**
  * Props for the `Documentation` component.
@@ -25,7 +26,7 @@ export const Documentation = ({
   maxWidth,
   className,
 }: DocumentationProps) => {
-  const config = getKitterConfig()?.styles?.documentation?.documentation ?? {};
+  const config = useKitterConfig()?.styles?.documentation?.documentation ?? {};
 
   const resolvedMaxWidth = maxWidth ?? config.maxWidth ?? '1000px';
   const resolvedClassName =
@@ -70,7 +71,7 @@ export const ScrollToTop = ({
   iconOverride,
   textOverride,
 }: ScrollToTopProps) => {
-  const config = getKitterConfig()?.styles?.documentation?.scrollToTop ?? {};
+  const config = useKitterConfig()?.styles?.documentation?.scrollToTop ?? {};
 
   const resolvedTextClassName =
     `${config.textClassName ?? ''} ${textClassName ?? ''}`.trim();
@@ -124,7 +125,7 @@ export const Page = ({
   center = false,
   id,
 }: PageProps) => {
-  const config = getKitterConfig()?.styles?.documentation?.page ?? {};
+  const config = useKitterConfig()?.styles?.documentation?.page ?? {};
 
   const layout = center ? 'flex flex-col justify-center' : '';
 
@@ -164,7 +165,7 @@ export const DocumentContents = ({
   className,
 }: DocumentContentsProps) => {
   const config =
-    getKitterConfig()?.styles?.documentation?.documentContents ?? {};
+    useKitterConfig()?.styles?.documentation?.documentContents ?? {};
 
   const resolvedClassName = `items-center w-full justify-center ${config.className} ${className}`;
 
@@ -193,7 +194,7 @@ export interface PageTitleProps {
  * @returns JSX.Element
  */
 export const PageTitle = ({ title, className }: PageTitleProps) => {
-  const config = getKitterConfig()?.styles?.documentation?.pageTitle ?? {};
+  const config = useKitterConfig()?.styles?.documentation?.pageTitle ?? {};
 
   const resolvedClassName =
     `text-center ${config.className ?? ''} ${className ?? ''}`.trim();
@@ -219,7 +220,7 @@ export const PageDescription = ({
   className,
 }: PageDescriptionProps) => {
   const config =
-    getKitterConfig()?.styles?.documentation?.pageDescription ?? {};
+    useKitterConfig()?.styles?.documentation?.pageDescription ?? {};
 
   const resolvedClassName =
     `${config.className ?? ''} ${className ?? ''}`.trim();
@@ -250,7 +251,7 @@ export const PageSection = ({
   titleClassName,
   id,
 }: PageSectionProps) => {
-  const config = getKitterConfig()?.styles?.documentation?.pageSection ?? {};
+  const config = useKitterConfig()?.styles?.documentation?.pageSection ?? {};
 
   const resolvedTitleClassName =
     `${config.titleClassName ?? ''} ${titleClassName ?? ''}`.trim();

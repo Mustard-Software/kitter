@@ -2,7 +2,7 @@ import { useRef, useState, useEffect, type ReactNode } from 'react';
 import { parse, converter, formatHex } from 'culori';
 
 import { PageSection } from '../documentation';
-import { getKitterConfig } from '../kitter.config';
+import { useKitterConfig } from '../KitterProvider';
 
 const oklchConverter = converter('oklch');
 const hslConverter = converter('hsl');
@@ -69,7 +69,7 @@ export const ColorSwatch = ({
   displayOklch = true,
   displayHsl = true,
 }: ColorSwatchProps) => {
-  const config = getKitterConfig()?.styles?.color?.colorSwatch ?? {};
+  const config = useKitterConfig().styles?.color?.colorSwatch ?? {};
 
   const ref = useRef<HTMLDivElement>(null);
   const [hex, setHex] = useState('');

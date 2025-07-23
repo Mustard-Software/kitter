@@ -6,7 +6,7 @@ export const kitter: KitterConfig = {
   styles: {
     documentation: {
       documentation: {
-        maxWidth: '250px',
+        maxWidth: '1000px',
         className: '',
       },
       scrollToTop: {
@@ -35,7 +35,7 @@ export const kitter: KitterConfig = {
     },
     color: {
       colorSwatch: {
-        size: 'w-8 h-8',
+        size: 'w-16 h-16',
         radius: 'rounded-sm',
         shadow: 'shadow-sm',
         labelStyle: 'font-mono text-md',
