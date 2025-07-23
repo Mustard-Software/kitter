@@ -1,5 +1,11 @@
 # kitter
 
+## 0.1.4
+
+### Patch Changes
+
+- 7bedd26: Adds padding to section titles
+
 ## 0.1.3
 
 ### Patch Changes
