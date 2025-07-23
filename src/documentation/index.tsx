@@ -258,7 +258,7 @@ export const PageSection = ({
 
   return (
     <div
-      className="flex w-full flex-col items-center justify-center gap-4"
+      className="flex w-full flex-col items-center justify-center gap-4 px-8"
       id={id}
     >
       <h2 className={resolvedTitleClassName}>{title}</h2>
