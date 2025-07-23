@@ -1,5 +1,12 @@
 # kitter
 
+## 0.1.3
+
+### Patch Changes
+
+- 30fe67b: Adds padding to color group
+- be1153b: Adds padding to color group
+
 ## 0.1.2
 
 ### Patch Changes
