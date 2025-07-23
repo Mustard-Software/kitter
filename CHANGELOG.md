@@ -1,5 +1,11 @@
 # kitter
 
+## 0.1.2
+
+### Patch Changes
+
+- a59a646: Attempt tarball fix
+
 ## 0.1.1
 
 ### Patch Changes
