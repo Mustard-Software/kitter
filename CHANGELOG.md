@@ -1,5 +1,11 @@
 # kitter
 
+## 0.1.5
+
+### Patch Changes
+
+- e2d2911: Fix color group padding
+
 ## 0.1.4
 
 ### Patch Changes
